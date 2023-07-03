@@ -34,7 +34,7 @@ extension Question {
                      answers: [
                         Answer(text: "Плавать", type: .dog),
                         Answer(text: "Спать", type: .cat),
-                        Answer(text: "Обниматься", type: .rabbit),
+                        Answer(text: "Обнимать", type: .rabbit),
                         Answer(text: "Есть", type: .turtle)
                      ]
             ),

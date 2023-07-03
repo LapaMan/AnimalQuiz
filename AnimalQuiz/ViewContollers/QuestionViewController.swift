@@ -12,7 +12,12 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var questionLabel: UILabel!
-    @IBOutlet var rangedSlider: UISlider!
+    @IBOutlet var rangedSlider: UISlider! {
+        didSet {
+            let answerCout = Float(currentAnswers.count - 1)
+            rangedSlider.value = answerCout
+        }
+    }
     
     @IBOutlet var singleStackView: UIStackView!
     @IBOutlet var multipleStackView: UIStackView!
@@ -21,6 +26,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet var singleButtons: [UIButton]!
     @IBOutlet var multipleLabels: [UILabel]!
     @IBOutlet var rangedLabels: [UILabel]!
+    @IBOutlet var multipleSwitches: [UISwitch]!
     
     // MARK: Properties
     private let questions = Question.getQuestions()
@@ -35,6 +41,31 @@ class QuestionViewController: UIViewController {
         updateUI()
     }
     
+    @IBAction func singleButtonAnswerPressed(_ sender: UIButton) {
+        guard let currentIndex = singleButtons.firstIndex(of: sender) else { return }
+        
+        let currentAnswer = currentAnswers[currentIndex]
+        answerChosen.append(currentAnswer)
+        
+        nextQuestion()
+    }
+    
+    @IBAction func multipleAnswerPressed() {
+        for (multipleSwitch, answer) in zip(multipleSwitches, currentAnswers) {
+            if multipleSwitch.isOn {
+                answerChosen.append(answer)
+            }
+        }
+        
+        nextQuestion()
+    }
+    
+    @IBAction func rangedAnswerButtonPressed() {
+        let index = Int(rangedSlider.value)
+        answerChosen.append(currentAnswers[index])
+        
+        nextQuestion()
+    }
 }
 
 // MARK: - Private

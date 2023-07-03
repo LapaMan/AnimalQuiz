@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // тут кнопка Done обнуляет заново тест
     @IBAction func unwind(for seque: UIStoryboardSegue) {}
 }
 

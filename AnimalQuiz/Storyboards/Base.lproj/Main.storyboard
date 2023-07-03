@@ -120,7 +120,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
                                         <connections>
-                                            <segue destination="jdi-qh-hoK" kind="show" id="2aN-nO-KrJ"/>
+                                            <action selector="rangedAnswerButtonPressed" destination="aIQ-uO-lQK" eventType="touchUpInside" id="fzW-tb-6pg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -141,21 +141,33 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonAnswerPressed:" destination="aIQ-uO-lQK" eventType="touchUpInside" id="J45-bP-V5a"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8L-G1-ph5">
                                         <rect key="frame" x="0.0" y="68.5" width="343" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonAnswerPressed:" destination="aIQ-uO-lQK" eventType="touchUpInside" id="IZu-A1-9oh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOe-Mo-0FC">
                                         <rect key="frame" x="0.0" y="137" width="343" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonAnswerPressed:" destination="aIQ-uO-lQK" eventType="touchUpInside" id="32y-1o-T8g"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSO-Sw-SYz">
                                         <rect key="frame" x="0.0" y="205.5" width="343" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonAnswerPressed:" destination="aIQ-uO-lQK" eventType="touchUpInside" id="OYG-04-mS1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -224,6 +236,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="multipleAnswerPressed" destination="aIQ-uO-lQK" eventType="touchUpInside" id="Ief-uc-MIP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -235,7 +250,6 @@
                             <constraint firstItem="ZtE-i4-Vz5" firstAttribute="trailing" secondItem="8sj-Xy-PDI" secondAttribute="trailing" constant="16" id="Abg-dh-anu"/>
                             <constraint firstItem="Wdd-1q-AXi" firstAttribute="centerY" secondItem="IfX-MZ-xIq" secondAttribute="centerY" id="DrJ-k7-YvY"/>
                             <constraint firstItem="ZtE-i4-Vz5" firstAttribute="trailing" secondItem="Wdd-1q-AXi" secondAttribute="trailing" constant="16" id="Ept-uy-JdM"/>
-                            <constraint firstItem="8sj-Xy-PDI" firstAttribute="centerY" secondItem="IfX-MZ-xIq" secondAttribute="centerY" id="EqY-aW-i4i"/>
                             <constraint firstItem="hQJ-sq-2VU" firstAttribute="leading" secondItem="ZtE-i4-Vz5" secondAttribute="leading" constant="16" id="K9T-Rx-JlL"/>
                             <constraint firstItem="luO-1S-gtt" firstAttribute="centerY" secondItem="IfX-MZ-xIq" secondAttribute="centerY" id="Ws5-6b-2Xc"/>
                             <constraint firstItem="luO-1S-gtt" firstAttribute="leading" secondItem="ZtE-i4-Vz5" secondAttribute="leading" constant="16" id="dlp-Uo-pJh"/>
@@ -244,6 +258,7 @@
                             <constraint firstItem="8sj-Xy-PDI" firstAttribute="leading" secondItem="ZtE-i4-Vz5" secondAttribute="leading" constant="16" id="pR4-tg-NuX"/>
                             <constraint firstItem="M3t-tZ-CVy" firstAttribute="top" secondItem="ZtE-i4-Vz5" secondAttribute="top" id="pjz-B8-s72"/>
                             <constraint firstItem="ZtE-i4-Vz5" firstAttribute="trailing" secondItem="M3t-tZ-CVy" secondAttribute="trailing" id="uyj-SZ-fmq"/>
+                            <constraint firstItem="8sj-Xy-PDI" firstAttribute="centerY" secondItem="IfX-MZ-xIq" secondAttribute="centerY" id="zHA-xK-KiE"/>
                             <constraint firstItem="Wdd-1q-AXi" firstAttribute="leading" secondItem="ZtE-i4-Vz5" secondAttribute="leading" constant="16" id="znJ-c0-fNF"/>
                         </constraints>
                     </view>
@@ -267,6 +282,10 @@
                         <outletCollection property="multipleLabels" destination="msd-tk-XLu" collectionClass="NSMutableArray" id="uKI-pO-TQa"/>
                         <outletCollection property="rangedLabels" destination="HyI-Tw-Lcx" collectionClass="NSMutableArray" id="QhC-42-QfM"/>
                         <outletCollection property="rangedLabels" destination="HFs-KY-nrm" collectionClass="NSMutableArray" id="2G0-MO-VYv"/>
+                        <outletCollection property="multipleSwitches" destination="cNv-9O-pkG" collectionClass="NSMutableArray" id="nOV-1c-5O9"/>
+                        <outletCollection property="multipleSwitches" destination="V5Y-N4-nrW" collectionClass="NSMutableArray" id="vne-Rc-tu8"/>
+                        <outletCollection property="multipleSwitches" destination="4uY-qf-EHd" collectionClass="NSMutableArray" id="VvP-D7-LHm"/>
+                        <outletCollection property="multipleSwitches" destination="Pd3-FI-mke" collectionClass="NSMutableArray" id="CL8-k3-gIE"/>
                         <segue destination="jdi-qh-hoK" kind="show" identifier="showResult" id="te2-WD-ntj"/>
                     </connections>
                 </viewController>
@@ -309,10 +328,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результаты" id="UV8-zu-6bi">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="QCW-zZ-X6x"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="QCW-zZ-X6x">
+                            <connections>
+                                <segue destination="p0i-fo-bK7" kind="unwind" unwindAction="unwindFor:" id="CBv-9I-lDw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXM-P6-o5c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="p0i-fo-bK7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2328.8000000000002" y="24.7376311844078"/>
         </scene>
@@ -335,9 +359,6 @@
             <point key="canvasLocation" x="912.79999999999995" y="24.7376311844078"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="te2-WD-ntj"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
